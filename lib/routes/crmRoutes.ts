@@ -1,34 +1,34 @@
 import {Request, Response} from "express";
 import {ContactController} from "../controller/crmController";
 
-export class Routes { 
-    
+export class Routes {
+
     public contactController: ContactController = new ContactController();
-    
-    public routes(app): void {   
-        
+
+    public routes(app: any): void {
+
        // app.route('/')
-        //.get((req: Request, res: Response) => {            
+        //.get((req: Request, res: Response) => {
           //  res.status(200).send({
             //    message: 'GET request successfulll!!!!'
             //})
         //})
-        
-        // Contact 
-       // app.route('/contact') 
-        // GET endpoint 
+
+        // Contact
+       // app.route('/contact')
+        // GET endpoint
        // .get((req: Request, res: Response) => {
-        // Get all contacts            
+        // Get all contacts
          //   res.status(200).send({
                 message: 'GET request successfulll!!!!'
            // })
-        //}) 
-          // Contact 
+        //})
+          // Contact
           app.route('/contact')
-          .get(this.contactController.getcontacts);       
+          .get(this.contactController.getcontacts);
         // POST endpoint
         app.route('/contact')
         .post(this.contactController.addNewContact);
-        
+
     }
 }
